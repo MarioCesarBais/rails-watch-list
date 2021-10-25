@@ -1,0 +1,23 @@
+<h1 class="border border-dark rounded">All Movies</h1>
+<br>
+<div class='banner'>
+  <!--<img src="https://i1.wp.com/top10mais.org/wp-content/uploads/2015/09/Paramount-entre-as-maiores-produtoras-de-filmes-do-mundo.jpg?w=600&ssl=1" alt="wb">
+  <img src="https://i1.wp.com/top10mais.org/wp-content/uploads/2015/09/21st-Century-Fox-entre-as-maiores-produtoras-de-filmes-do-mundo.jpg?w=600&ssl=1" alt='20thCentury'> -->
+  <%= image_tag 'istockphoto-1093110112-170667a.jpg' %>
+</div>
+<br>
+<div class='list-container'>
+  <div class="cards">
+    <% @movies.each do |movie| %>
+      <div class='card-movie text-align-center'>
+        <h3 class='m-3'><%= movie.title%></h3>
+        <h6>rating: <%= movie.rating %>   <%= link_to "overview", movie_path(movie.id)%></h6>
+        <img class='m-2 w-50' src= <%="https://image.tmdb.org/t/p/w500/#{movie.poster_url}"%> alt="poster">
+      </div>
+    <% end %>
+  </div>
+</div>
+<p class='p-5'>
+<%= link_to 'Return to lists', lists_path %> |
+<%= link_to 'Return to bookmarks', list_bookmarks_path(List.all.first.id)%>
+</p>

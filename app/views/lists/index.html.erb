@@ -1,0 +1,18 @@
+<h1>All Lists</h1>
+<br>
+<%= link_to 'Create a new List', new_list_path, class: "btn btn-secondary" %>
+<br>
+<br>
+<div class='list-container'>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card">
+        <h3> <%=list.name%> </h3>
+        <h6>
+          <span class='mx-3'><%= link_to 'bookmarks', list_bookmarks_path(list.id, list.name)%></span>
+          <span class='mx-3'><%= link_to 'movies', movies_path(list.id)%></span>
+        </h6>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -18,3 +18,11 @@ require("channels")
 
 // app/javascript/packs/application.js
 import 'bootstrap';
+
+// app/javascript/packs/application.js
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  initUpdateNavbarOnScroll();
+});

@@ -1,0 +1,8 @@
+<div class='container'>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :category, collection: %w(chinese italian japanese french belgian) %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+  <% end %>
+
+</div>

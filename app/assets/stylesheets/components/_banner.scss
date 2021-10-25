@@ -1,0 +1,17 @@
+.home-banner {
+  // background-image: url('/istockphoto-1093110112-170667a.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+}
+
+.banner {
+  width: 40vh;
+  color: #eee;
+  text-align: center;
+  display: inline;
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

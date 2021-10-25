@@ -1,0 +1,19 @@
+<h1>Info about Movie</h1>
+
+<div class='list-container'>
+  <div class="cards-movie">
+    <div class='card text-align-justify'>
+      <h3> <%= @movie.title %> </h3>
+      <p>  Rating: <%= @movie.rating%> </p>
+      <p class='px-3'><%= @movie.overview %> </p>
+    </div>
+    <div class='card'>
+      <img src= <%="https://image.tmdb.org/t/p/w500/#{@movie.poster_url}"%> alt="poster">
+    </div>
+  </div>
+</div>
+<p class = 'p-5'> <%= link_to 'Back To Movies List', movies_path %>
+  <span class='m-5'></span> <%= link_to 'Back To Lists', lists_path %>
+  <span class='m-5'></span> <%= link_to 'Back To Bookmarks',
+  list_bookmarks_path(Bookmark.where(movie_id: Movie.find(24).id).first.list_id) %></span>
+</p>
